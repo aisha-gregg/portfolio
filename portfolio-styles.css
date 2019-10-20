@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster+Two|Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poiret+One&display=swap");
 :root {
-  --font-family: "Varela Round", sans-serif;
+  --body-font-family: "Varela Round", sans-serif;
+  --title-font-family: "Lobster Two", cursive;
+  --subtitle-font-family: "Poiret One", cursive;
   --name-font-size: 50px;
 
   --body-font-size: 22px;
@@ -22,94 +24,130 @@
 body {
   margin: auto 0;
   background-color: rgb(245, 245, 245);
-  font-family: var(--font-family);
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   line-height: 1.8;
   display: flex;
   flex-direction: column;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font-family);
+  font-size: var(--header-font-size);
+}
+
+img {
+  width: 100%;
+}
+
 strong {
   color: var(--secondary-color);
 }
 
+p {
+  text-align: justify;
+}
+.name {
+  font-size: var(--name-font-size);
+}
+
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .intro-image {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.name {
-  font-size: var(--name-font-size);
-  text-align: center;
-  font-family: "Lobster Two", cursive;
+  max-width: 200px;
+  padding: var(--large);
 }
 
 .job-title {
   text-align: center;
   padding-bottom: var(--medium);
   font-style: normal;
-  font-family: "Poiret One", cursive;
+  font-family: var(--subtitle-font-family);
 }
 
 .title {
+  height: 50vh;
   background-color: var(--primary-color);
   color: var(--on-primary-color);
   box-shadow: inset 0px -10px 13px 0px var(--secondary-color);
 }
-.text-appear {
-  animation: fadeEffect 2s;
-}
 
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-section {
-  text-align: justify;
-}
 .section {
   color: var(--title-color);
   border-radius: var(--border-radius);
   width: max-content;
   padding: var(--small) var(--medium);
-  font-size: var(--header-font-size);
-  font-family: "Lobster Two", cursive;
 }
+
 .projects-section {
   display: grid;
   grid-gap: var(--grid-gap-size);
   grid-template-columns: repeat(4, 1fr);
 }
 .projects-section img {
-  width: 220px;
+  transform: translate(-9px -15px);
 }
 
 .logos img {
   justify-content: center;
   width: 60px;
   padding: var(--small) var(--medium);
+  transform: translate(-9px -15px);
 }
+
 .footer {
   background-color: rgb(61, 63, 65);
   margin-top: auto;
 }
+
 .footer p,
 a {
   color: var(--on-primary-color);
-  font-family: var(--font-family "Varela Round", sans-serif);
   font-size: var(--footer-font-size);
 }
 
-.animation-element {
+.hide {
+  opacity: 0;
+  transition: 2s opacity ease;
+}
+
+.show {
   opacity: 1;
-  transition: opacity 0.5s 0.25s ease-out;
+}
+
+@keyframes animate-images {
+  0% {
+    transform: translate(10px, 14px);
+  }
+  33% {
+    transform: translate(10px, 14px);
+  }
+  66% {
+    transform: translate(10px, 16px);
+  }
+  100% {
+    transform: translate(8px, 16px);
+  }
+}
+
+.projects-section img:hover {
+  animation: animate-images 0.1s infinite alternate;
+}
+.logos img:hover {
+  animation: animate-images 0.1s infinite alternate;
 }
