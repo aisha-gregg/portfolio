@@ -81,7 +81,7 @@ p {
 }
 
 .title {
-  height: 50vh;
+  height: 40vh;
   background-color: var(--primary-color);
   color: var(--on-primary-color);
   box-shadow: inset 0px -10px 13px 0px var(--secondary-color);
@@ -99,15 +99,11 @@ p {
   grid-gap: var(--grid-gap-size);
   grid-template-columns: repeat(4, 1fr);
 }
-.projects-section img {
-  transform: translate(-9px -15px);
-}
 
 .logos img {
   justify-content: center;
   width: 60px;
   padding: var(--small) var(--medium);
-  transform: translate(-9px -15px);
 }
 
 .footer {
@@ -120,6 +116,9 @@ a {
   color: var(--on-primary-color);
   font-size: var(--footer-font-size);
 }
+.contact {
+  color: var(--primary-color);
+}
 
 .hide {
   opacity: 0;
@@ -130,24 +129,34 @@ a {
   opacity: 1;
 }
 
-@keyframes animate-images {
-  0% {
-    transform: translate(10px, 14px);
-  }
-  33% {
-    transform: translate(10px, 14px);
-  }
-  66% {
-    transform: translate(10px, 16px);
-  }
-  100% {
-    transform: translate(8px, 16px);
-  }
+.projects-section img {
+  height: 150px;
+  overflow: hidden;
+}
+.projects-section img {
+  transition: transform 0.3s ease-in-out;
+}
+.projects-section img:hover {
+  transform: scale(1.5);
+  border-radius: var(--medium);
 }
 
-.projects-section img:hover {
-  animation: animate-images 0.1s infinite alternate;
+.github img:hover {
+  background-color: rgb(158, 126, 20);
+  transition: 0.2s ease-in-out;
+  opacity: 0.8;
+  border-radius: var(--medium);
 }
-.logos img:hover {
-  animation: animate-images 0.1s infinite alternate;
+.twitter img:hover {
+  background-color: rgb(35, 151, 204);
+  transition: 0.2s ease-in-out;
+  opacity: 0.8;
+  border-radius: var(--medium);
+}
+
+.linkedin img:hover {
+  background-color: rgb(26, 110, 206);
+  transition: 0.2s ease-in-out;
+  opacity: 0.8;
+  border-radius: var(--medium);
 }
