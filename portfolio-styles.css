@@ -23,7 +23,7 @@
 }
 
 body {
-  margin: auto 0;
+  margin: 0;
   background-color: rgb(245, 245, 245);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
@@ -50,9 +50,6 @@ strong {
   color: var(--secondary-color);
 }
 
-p {
-  text-align: justify;
-}
 .name {
   font-size: var(--name-font-size);
 }
