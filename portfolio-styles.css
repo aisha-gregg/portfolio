@@ -18,7 +18,7 @@
   --secondary-color: #7d0000;
   --title-color: black;
   --header-font-size: 30px;
-  --grid-gap-size: 6px;
+  --grid-gap-size: 7px;
   --footer-font-size: 15px;
 }
 
@@ -60,6 +60,7 @@ strong {
   align-items: center;
   height: 100%;
   width: 100%;
+  background-color: var(--primary-color);
 }
 
 .main-container {
@@ -96,7 +97,8 @@ strong {
 .projects-section {
   display: grid;
   grid-gap: var(--grid-gap-size);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom-style: inset;
 }
 
 .logos img {
